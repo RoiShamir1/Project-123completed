@@ -1,0 +1,32 @@
+run zookeeper in kafka dir - .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+run server - .\bin\windows\kafka-server-start.bat .\config\server.properties
+
+create topic (win dir)- kafka-topics.bat --create --bootstrap-server localhost:9092 --topic "test"
+                        kafka-topics.bat --create --topic "***" --bootstrap-server localhost:9092 --replication-factor 1 --partitions 3
+
+producer (push info)- kafka-console-producer.bat --broker-list localhost:9092 --topic test
+
+consumer (read info) - kafka-console-consumer.bat --topic test --bootstrap-server localhost:9092 --from-beginning
+
+message - bin/kafka-console-producer.bat --broker-list broker-list --topic test
+
+roish100
+fIHJmlCTHADLlVb3
+
+mongodb+srv://roish100:<password>@cluster3.u6jfodi.mongodb.net/
+mongodb+srv://roish100:fIHJmlCTHADLlVb3@cluster3.u6jfodi.mongodb.net/?retryWrites=true&w=majority
+
+
+Docker Commands:
+docker-compose up -d     -- Start the project (-d for decoupled mode)
+docker-compose down      -- Stop the project (removes the containers)
+docker-compose ps        -- Print active containers
+
+
+Mongodb sh
+docker exec -it mongodb mongosh 
+
+Redis
+docker exec -it redis redis-cli   
+KEYS *  
+GET <your-key>     
